@@ -2,143 +2,163 @@ import { ChevronDownIcon, SearchIcon } from '@chakra-ui/icons';
 import { useDisclosure, Modal, ModalContent, ModalOverlay, Highlight, Center, Spacer, Flex, Text, Box, Button, Menu, MenuButton, MenuItem, MenuList, Tab, TabList, TabPanel, TabPanels, Tabs, ModalBody, Image, InputGroup, InputLeftAddon, Input, Stack } from '@chakra-ui/react';
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import BlockList from './BlockList';
 import CreateMenuItems from './CreateMenuItems';
 
-const Mens = {
-  "The Find": [
-    {
-      title: "Fresh Spring/Summer Denim",
-      path: "",
-      to: ""
-    },
-    {
-      title: "The Sandals Guide",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Energizing Sporty Looks",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Western-Inspired Wear",
-      path: "",
-      to: ""
-    },
-    {
-      title: "L.L. Bean Hiking Musts",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Outdoor Style + Merrell",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Garden Charm Trend",
-      path: "",
-      to: ""
-    },
-  ],
-  "The Style Room": [
-    {
-      title: "Newest Obsession: Schutz",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Lauren Ralph Lauren",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Romantic Utility",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Men's Season's Best",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Men's Denim Daze",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Men's Modern Grunge",
-      path: "",
-      to: ""
-    },
-  ],
-  "New Brands": [
-    {
-      title: "Newest Obsession: Schutz",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Lauren Ralph Lauren",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Romantic Utility",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Men's Season's Best",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Men's Denim Daze",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Men's Modern Grunge",
-      path: "",
-      to: ""
-    },
-  ],
-  "New Arrivals": [
-    {
-      title: "Newest Obsession: Schutz",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Lauren Ralph Lauren",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Romantic Utility",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Men's Season's Best",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Men's Denim Daze",
-      path: "",
-      to: ""
-    },
-    {
-      title: "Men's Modern Grunge",
-      path: "",
-      to: ""
-    },
-  ]
-}
+const One = [
+  {
+    title: "The Find",
+    header: true,
+    path: "",
+    to: ""
+  },
+  {
+    title: "Fresh Spring/Summer Denim",
+    path: "",
+    to: ""
+  },
+  {
+    title: "The Sandals Guide",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Energizing Sporty Looks",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Western-Inspired Wear",
+    path: "",
+    to: ""
+  },
+  {
+    title: "L.L. Bean Hiking Musts",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Outdoor Style + Merrell",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Garden Charm Trend",
+    path: "",
+    to: ""
+  },
+]
+
+const Mens = [
+  {
+    title: "The Style Room",
+    header: true,
+    path: "",
+    to: ""
+  },
+  {
+    title: "Newest Obsession: Schutz",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Lauren Ralph Lauren",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Romantic Utility",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Men's Season's Best",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Men's Denim Daze",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Men's Modern Grunge",
+    path: "",
+    to: ""
+  },
+  {
+    title: "New Brands",
+    path: "",
+    to: "",
+    header: true
+  },
+  {
+    title: "Newest Obsession: Schutz",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Lauren Ralph Lauren",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Romantic Utility",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Men's Season's Best",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Men's Denim Daze",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Men's Modern Grunge",
+    path: "",
+    to: ""
+  },
+  {
+    title: "New Arrivals",
+    path: "",
+    to: "",
+    header: true
+  },
+  {
+    title: "Newest Obsession: Schutz",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Lauren Ralph Lauren",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Romantic Utility",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Men's Season's Best",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Men's Denim Daze",
+    path: "",
+    to: ""
+  },
+  {
+    title: "Men's Modern Grunge",
+    path: "",
+    to: ""
+  },
+]
 
 // https://cdn.iconscout.com/icon/free/png-256/z-characters-character-alphabet-letter-36052.png add fecvicon 
 
@@ -168,18 +188,18 @@ const Navbar = () => {
                 <Flex>
                   <Box>
                     <Menu>
-                      <MenuButton onClick={onOpen} as={Button} rightIcon={<ChevronDownIcon />}>
+                      <MenuButton bg={"none"} onClick={onOpen} as={Button} rightIcon={<ChevronDownIcon />}>
                         Customer Service
                       </MenuButton>
                       <Modal isOpen={isOpen} onClose={onClose}>
-                        <ModalOverlay />
-                        <ModalContent>
-                          <MenuList >
-                            <MenuItem>Contact Info</MenuItem>
-                            <MenuItem>FAQ</MenuItem>
-                            <MenuItem>Give Us Feedback</MenuItem>
-                          </MenuList>
-                        </ModalContent>
+                      <ModalOverlay />
+                      <ModalContent>
+                      <MenuList >
+                        <MenuItem>Contact Info</MenuItem>
+                        <MenuItem>FAQ</MenuItem>
+                        <MenuItem>Give Us Feedback</MenuItem>
+                      </MenuList>
+                      </ModalContent>
                       </Modal>
                     </Menu>
                   </Box>
@@ -225,7 +245,7 @@ const Navbar = () => {
           </Flex>
           <Spacer />
           <Button colorScheme='teal' size='md' w={"150px"} >
-            { 0 } My Cart
+            {0} My Cart
           </Button>
         </Flex>
       </Box>
@@ -237,11 +257,12 @@ const Navbar = () => {
                 New
               </MenuButton>
               <Modal isOpen={isOpen} onClose={onClose}>
-                <ModalOverlay />
+                {/* <ModalOverlay /> */}
                 <ModalContent>
                   <MenuList>
                     <Flex>
-                      <CreateMenuItems data={ Mens } />
+                      <BlockList props={One} />
+                      {/* the items go here */}
                       <Box borderLeft={"2px solid #dddddd"}>
                         <Stack spacing={"20px"} height={"fit-content"}>
                           <Center>
@@ -253,7 +274,7 @@ const Navbar = () => {
                           <Center>
                             <Image width={"150px"} src={"https://m.media-amazon.com/images/G/01/2022/Global-Nav/COOP-BTC-ADIDAS-GLOBAL-NAV-350x350.jpg"}></Image>
                           </Center>
-                            <Center>Shop Campus Ready Adidas</Center>
+                          <Center>Shop Campus Ready Adidas</Center>
                         </Stack>
                       </Box>
                     </Flex>
@@ -261,10 +282,10 @@ const Navbar = () => {
                 </ModalContent>
               </Modal>
             </Menu>
-                <Button>Women</Button>
-                <Button>Men</Button>
-                <Button>Kids</Button>
-                <Button>Clothing</Button>
+            <Button>Women</Button>
+            <Button>Men</Button>
+            <Button>Kids</Button>
+            <Button>Clothing</Button>
           </Box>
         </Flex>
       </Box>
