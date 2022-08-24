@@ -1,15 +1,154 @@
 import { ChevronDownIcon, SearchIcon } from '@chakra-ui/icons';
-import { useDisclosure, Modal, ModalContent, ModalOverlay, Highlight, Center, Spacer, Flex, Text, Box, Button, Menu, MenuButton, MenuItem, MenuList, Tab, TabList, TabPanel, TabPanels, Tabs, ModalBody, Image, InputGroup, InputLeftAddon, Input } from '@chakra-ui/react';
+import { useDisclosure, Modal, ModalContent, ModalOverlay, Highlight, Center, Spacer, Flex, Text, Box, Button, Menu, MenuButton, MenuItem, MenuList, Tab, TabList, TabPanel, TabPanels, Tabs, ModalBody, Image, InputGroup, InputLeftAddon, Input, Stack } from '@chakra-ui/react';
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import CreateMenuItems from './CreateMenuItems';
+
+const Mens = {
+  "The Find": [
+    {
+      title: "Fresh Spring/Summer Denim",
+      path: "",
+      to: ""
+    },
+    {
+      title: "The Sandals Guide",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Energizing Sporty Looks",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Western-Inspired Wear",
+      path: "",
+      to: ""
+    },
+    {
+      title: "L.L. Bean Hiking Musts",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Outdoor Style + Merrell",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Garden Charm Trend",
+      path: "",
+      to: ""
+    },
+  ],
+  "The Style Room": [
+    {
+      title: "Newest Obsession: Schutz",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Lauren Ralph Lauren",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Romantic Utility",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Men's Season's Best",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Men's Denim Daze",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Men's Modern Grunge",
+      path: "",
+      to: ""
+    },
+  ],
+  "New Brands": [
+    {
+      title: "Newest Obsession: Schutz",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Lauren Ralph Lauren",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Romantic Utility",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Men's Season's Best",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Men's Denim Daze",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Men's Modern Grunge",
+      path: "",
+      to: ""
+    },
+  ],
+  "New Arrivals": [
+    {
+      title: "Newest Obsession: Schutz",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Lauren Ralph Lauren",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Romantic Utility",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Men's Season's Best",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Men's Denim Daze",
+      path: "",
+      to: ""
+    },
+    {
+      title: "Men's Modern Grunge",
+      path: "",
+      to: ""
+    },
+  ]
+}
+
+// https://cdn.iconscout.com/icon/free/png-256/z-characters-character-alphabet-letter-36052.png add fecvicon 
 
 const Navbar = () => {
 
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
-    <div>
-      <div>
+    <Box>
+      <Box>
         <Tabs size='md' variant='enclosed'>
           <TabList>
             <Tab>
@@ -29,10 +168,9 @@ const Navbar = () => {
                 <Flex>
                   <Box>
                     <Menu>
-                      <MenuButton onClick={onOpen} style={{ backgroundColor: "transparent", color: "white" }} as={Button} rightIcon={<ChevronDownIcon />}>
+                      <MenuButton onClick={onOpen} as={Button} rightIcon={<ChevronDownIcon />}>
                         Customer Service
                       </MenuButton>
-
                       <Modal isOpen={isOpen} onClose={onClose}>
                         <ModalOverlay />
                         <ModalContent>
@@ -55,18 +193,18 @@ const Navbar = () => {
               </Box>
             </TabPanel>
             <TabPanel p={"0px"} pt={"5px"}>
-              <div style={{ backgroundColor: "black", height: "fit-content", width: "100%" }} className='nav_mid_band_vrsn'>
+              <Box style={{ backgroundColor: "black", height: "fit-content", width: "100%" }} className='nav_mid_band_vrsn'>
                 <Flex p={"5px"} justifyContent={"flex-end"} >
                   <Center h={"30px"} color={"white"} pr={"30px"}>
                     FREE Shipping & FREE 365-Day Returns
                   </Center>
                 </Flex>
-              </div>
+              </Box>
             </TabPanel>
           </TabPanels>
         </Tabs>
-      </div>
-      <Box>
+      </Box>
+      <Box bg={"white"} >
         <Flex p={"15px"}>
           <Link to="">
             <Center>
@@ -78,20 +216,59 @@ const Navbar = () => {
           <Spacer />
           <Flex width={"500px"}>
             <InputGroup>
-              <InputLeftAddon bg={"none"}>
+              <InputLeftAddon borderWidth={"3px"} bg={"white"}>
                 <SearchIcon />
               </InputLeftAddon>
-              <Input borderRadius={"5px 0 0 5px"} type='text' placeholder='Search for Shoes, Clothes, etc.' />
-              <Button borderRadius={"0 5px 5px 0"} >Search</Button>
+              <Input outline={"none"} borderWidth={"3px"} borderLeft={"none"} bg={"white"} borderRadius={"5px 0 0 5px"} type='text' placeholder='Search for Shoes, Clothes, etc.' />
+              <Button w={"150px"} color={"white"} bg={"#003953"} borderRadius={"0 5px 5px 0"} >SEARCH</Button>
             </InputGroup>
           </Flex>
           <Spacer />
           <Button colorScheme='teal' size='md' w={"150px"} >
-            My Cart
+            { 0 } My Cart
           </Button>
         </Flex>
       </Box>
-    </div>
+      <Box bg={"#e4f0f7"} >
+        <Flex>
+          <Box className='menu_items'>
+            <Menu>
+              <MenuButton onClick={onOpen} as={Button} rightIcon={<ChevronDownIcon />}>
+                New
+              </MenuButton>
+              <Modal isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent>
+                  <MenuList>
+                    <Flex>
+                      <CreateMenuItems data={ Mens } />
+                      <Box borderLeft={"2px solid #dddddd"}>
+                        <Stack spacing={"20px"} height={"fit-content"}>
+                          <Center>
+                            <Image width={"150px"} src={"https://m.media-amazon.com/images/G/01/2022/Global-Nav/COOP-BTC-ADIDAS-GLOBAL-NAV-350x350.jpg"}></Image>
+                          </Center>
+                          <Box padding={"20px"}>
+                            <Center>Shop Campus Ready Adidas</Center>
+                          </Box>
+                          <Center>
+                            <Image width={"150px"} src={"https://m.media-amazon.com/images/G/01/2022/Global-Nav/COOP-BTC-ADIDAS-GLOBAL-NAV-350x350.jpg"}></Image>
+                          </Center>
+                            <Center>Shop Campus Ready Adidas</Center>
+                        </Stack>
+                      </Box>
+                    </Flex>
+                  </MenuList>
+                </ModalContent>
+              </Modal>
+            </Menu>
+                <Button>Women</Button>
+                <Button>Men</Button>
+                <Button>Kids</Button>
+                <Button>Clothing</Button>
+          </Box>
+        </Flex>
+      </Box>
+    </Box>
   );
 };
 
