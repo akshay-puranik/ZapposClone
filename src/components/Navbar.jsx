@@ -2,163 +2,13 @@ import { ChevronDownIcon, SearchIcon } from '@chakra-ui/icons';
 import { useDisclosure, Modal, ModalContent, ModalOverlay, Highlight, Center, Spacer, Flex, Text, Box, Button, Menu, MenuButton, MenuItem, MenuList, Tab, TabList, TabPanel, TabPanels, Tabs, ModalBody, Image, InputGroup, InputLeftAddon, Input, Stack } from '@chakra-ui/react';
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { Menu_Data_For, Menu_Data_One, Menu_Data_Thr, Menu_Data_Two, Women_Menu_Data } from '../data/menuData';
 import BlockList from './BlockList';
 import CreateMenuItems from './CreateMenuItems';
 
-const One = [
-  {
-    title: "The Find",
-    header: true,
-    path: "",
-    to: ""
-  },
-  {
-    title: "Fresh Spring/Summer Denim",
-    path: "",
-    to: ""
-  },
-  {
-    title: "The Sandals Guide",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Energizing Sporty Looks",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Western-Inspired Wear",
-    path: "",
-    to: ""
-  },
-  {
-    title: "L.L. Bean Hiking Musts",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Outdoor Style + Merrell",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Garden Charm Trend",
-    path: "",
-    to: ""
-  },
-]
 
-const Mens = [
-  {
-    title: "The Style Room",
-    header: true,
-    path: "",
-    to: ""
-  },
-  {
-    title: "Newest Obsession: Schutz",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Lauren Ralph Lauren",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Romantic Utility",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Men's Season's Best",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Men's Denim Daze",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Men's Modern Grunge",
-    path: "",
-    to: ""
-  },
-  {
-    title: "New Brands",
-    path: "",
-    to: "",
-    header: true
-  },
-  {
-    title: "Newest Obsession: Schutz",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Lauren Ralph Lauren",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Romantic Utility",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Men's Season's Best",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Men's Denim Daze",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Men's Modern Grunge",
-    path: "",
-    to: ""
-  },
-  {
-    title: "New Arrivals",
-    path: "",
-    to: "",
-    header: true
-  },
-  {
-    title: "Newest Obsession: Schutz",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Lauren Ralph Lauren",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Romantic Utility",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Men's Season's Best",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Men's Denim Daze",
-    path: "",
-    to: ""
-  },
-  {
-    title: "Men's Modern Grunge",
-    path: "",
-    to: ""
-  },
-]
+
+
 
 // https://cdn.iconscout.com/icon/free/png-256/z-characters-character-alphabet-letter-36052.png add fecvicon 
 
@@ -187,21 +37,23 @@ const Navbar = () => {
               <Box bgColor={"#0076bd"} className='nav_mid_band_zappos'>
                 <Flex>
                   <Box>
-                    <Menu>
-                      <MenuButton bg={"none"} onClick={onOpen} as={Button} rightIcon={<ChevronDownIcon />}>
-                        Customer Service
-                      </MenuButton>
-                      <Modal isOpen={isOpen} onClose={onClose}>
-                      <ModalOverlay />
-                      <ModalContent>
-                      <MenuList >
-                        <MenuItem>Contact Info</MenuItem>
-                        <MenuItem>FAQ</MenuItem>
-                        <MenuItem>Give Us Feedback</MenuItem>
-                      </MenuList>
-                      </ModalContent>
-                      </Modal>
-                    </Menu>
+                    <Center>
+                      <Menu>
+                        <MenuButton bg={"transparent"} onClick={onOpen} as={Button} rightIcon={<ChevronDownIcon />}>
+                          Customer Service
+                        </MenuButton>
+                        <Modal isOpen={isOpen} onClose={onClose}>
+                        <ModalOverlay />
+                        <ModalContent>
+                        <MenuList >
+                          <MenuItem>Contact Info</MenuItem>
+                          <MenuItem>FAQ</MenuItem>
+                          <MenuItem>Give Us Feedback</MenuItem>
+                        </MenuList>
+                        </ModalContent>
+                        </Modal>
+                      </Menu>
+                    </Center>
                   </Box>
                   <Spacer />
                   <Center pr="30px" color={"white"}>
@@ -253,16 +105,15 @@ const Navbar = () => {
         <Flex>
           <Box className='menu_items'>
             <Menu>
-              <MenuButton onClick={onOpen} as={Button} rightIcon={<ChevronDownIcon />}>
+              <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
                 New
               </MenuButton>
-              <Modal isOpen={isOpen} onClose={onClose}>
-                {/* <ModalOverlay /> */}
-                <ModalContent>
                   <MenuList>
                     <Flex>
-                      <BlockList props={One} />
-                      {/* the items go here */}
+                      <BlockList props={Menu_Data_One} />
+                      <BlockList props={Menu_Data_Two} />
+                      <BlockList props={Menu_Data_Thr} />
+                      <BlockList props={Menu_Data_For} />
                       <Box borderLeft={"2px solid #dddddd"}>
                         <Stack spacing={"20px"} height={"fit-content"}>
                           <Center>
@@ -279,11 +130,8 @@ const Navbar = () => {
                       </Box>
                     </Flex>
                   </MenuList>
-                </ModalContent>
-              </Modal>
             </Menu>
-            <Button>Women</Button>
-            <Button>Men</Button>
+            
             <Button>Kids</Button>
             <Button>Clothing</Button>
           </Box>

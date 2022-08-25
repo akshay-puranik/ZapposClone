@@ -3,6 +3,7 @@ import React from 'react';
 
 const BlockList = ({props}) => {
   const data = Array.from(props)
+  // console.log(data)
   return (
     <Box>
       {
