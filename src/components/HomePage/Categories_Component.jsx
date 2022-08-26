@@ -37,8 +37,8 @@ const Categories_Component = () => {
             {
               data.map(el => {
                 return (
-                  <Box bg={"#f5f5f5"} width={"90%"} border={"1px solid black"} rounded={"5px"} p={"10px"}  >
-                    <Box bg={"#f5f5f5"} >
+                  <Box key={Date.now().toString()+Math.random()} bg={"#f5f5f5"} width={"90%"} rounded={"5px"} p={"10px"}  >
+                    <Box>
                         <Center>
                         <Image h={"250px"} p={"10px"} src={el.image}></Image>
                         </Center>

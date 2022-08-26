@@ -30,7 +30,7 @@ const Footer = () => {
       </Box>
       <Box className='Big_Foot'>
         <Flex>
-          <Box>
+          {/* <Box>
             <ul className='unstyled-list' >
               <Text size={"xl"}> header </Text>
               <li>Name</li>
@@ -56,7 +56,7 @@ const Footer = () => {
               <li>Name</li>
               <li>Name</li>
             </ul>
-          </Box>
+          </Box> */}
         </Flex>
       </Box>
     </Box>
