@@ -14,40 +14,43 @@ const Navbar_Drop_Menus = () => {
   return (
     <div>
       <Flex>
-        <Box className='menu_items'>
-          <Menu>
-            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-              New
-            </MenuButton>
-            <MenuList>
-              <Flex>
-                <BlockList props={Menu_Data_One} />
-                <BlockList props={Menu_Data_Two} />
-                <BlockList props={Menu_Data_Thr} />
-                <BlockList props={Menu_Data_For} />
-                <Box borderLeft={"2px solid #dddddd"}>
-                  <Stack spacing={"20px"} height={"fit-content"}>
-                    <Center>
-                      <Image width={"150px"} src={"https://m.media-amazon.com/images/G/01/2022/Global-Nav/COOP-BTC-ADIDAS-GLOBAL-NAV-350x350.jpg"}></Image>
-                    </Center>
-                    <Box padding={"20px"}>
+        <Box w={"100%"} bg={"#f4f4f4"} >
+
+          <Box className='menu_items' >
+            <Menu>
+              <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                New
+              </MenuButton>
+              <MenuList>
+                <Flex>
+                  <BlockList props={Menu_Data_One} />
+                  <BlockList props={Menu_Data_Two} />
+                  <BlockList props={Menu_Data_Thr} />
+                  <BlockList props={Menu_Data_For} />
+                  <Box borderLeft={"2px solid #dddddd"}>
+                    <Stack spacing={"20px"} height={"fit-content"}>
+                      <Center>
+                        <Image width={"150px"} src={"https://m.media-amazon.com/images/G/01/2022/Global-Nav/COOP-BTC-ADIDAS-GLOBAL-NAV-350x350.jpg"}></Image>
+                      </Center>
+                      <Box padding={"20px"}>
+                        <Center>Shop Campus Ready Adidas</Center>
+                      </Box>
+                      <Center>
+                        <Image width={"150px"} src={"https://m.media-amazon.com/images/G/01/2022/Global-Nav/COOP-BTC-ADIDAS-GLOBAL-NAV-350x350.jpg"}></Image>
+                      </Center>
                       <Center>Shop Campus Ready Adidas</Center>
-                    </Box>
-                    <Center>
-                      <Image width={"150px"} src={"https://m.media-amazon.com/images/G/01/2022/Global-Nav/COOP-BTC-ADIDAS-GLOBAL-NAV-350x350.jpg"}></Image>
-                    </Center>
-                    <Center>Shop Campus Ready Adidas</Center>
-                  </Stack>
-                </Box>
-              </Flex>
-            </MenuList>
-          </Menu>
+                    </Stack>
+                  </Box>
+                </Flex>
+              </MenuList>
+            </Menu>
 
-          <Button>Kids</Button>
-          <Button>Clothing</Button>
-        </Box>
-        <Box>
+            <Button>Kids</Button>
+            <Button>Clothing</Button>
+          </Box>
+          <Box>
 
+          </Box>
         </Box>
       </Flex>
     </div>
