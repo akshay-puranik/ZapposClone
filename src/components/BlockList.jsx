@@ -3,11 +3,12 @@ import React from 'react';
 
 const BlockList = ({props}) => {
   const data = Array.from(props)
+  // console.log(data)
   return (
     <Box>
       {
         data.map((el) => {
-          return el.header ? <MenuItem fontWeight={"bold"}>{ el.title }</MenuItem>: <MenuItem>{ el.title }</MenuItem>
+          return el.header ? <MenuItem key={el.title} fontWeight={"bold"}>{el.title}</MenuItem> : <MenuItem key={el.title}>{ el.title }</MenuItem>
         })
       }
     </Box>
