@@ -40,7 +40,7 @@ const Categories_Component = () => {
                   <Box key={Date.now().toString()+Math.random()} bg={"#f5f5f5"} width={"90%"} rounded={"5px"} p={"10px"}  >
                     <Box>
                         <Center>
-                        <Image h={"250px"} p={"10px"} src={el.image}></Image>
+                          <Image h={"250px"} p={"10px"} src={el.image}></Image>
                         </Center>
                       </Box>
                       <Center>
